@@ -41,5 +41,5 @@ export default defineConfig({
   plugins: [react(), saveRoadmapPlugin()],
   // Base path for GitHub Pages deployment
   // Change this to your repo name if deploying to https://username.github.io/repo-name/
-  base: './diffuse_project_coordination',
+  base: './diffuse_roadmap',
 })
