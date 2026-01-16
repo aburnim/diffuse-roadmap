@@ -1,6 +1,6 @@
 {
-  "title": "Research Program Roadmap",
-  "lastUpdated": "2025-01-13T00:00:00.000Z",
+  "title": "DiffUSE Roadmapping and Strategic Coordination ",
+  "lastUpdated": "2026-01-16T22:20:19.700Z",
   "swimlanes": [
     {
       "id": "compute",
@@ -9,376 +9,816 @@
       "order": 0
     },
     {
+      "id": "md-modeling",
+      "name": "Molecular Dynamics Modeling",
+      "color": "#06B6D4",
+      "order": 1
+    },
+    {
       "id": "ml-modeling",
       "name": "Machine Learning Modeling",
       "color": "#8B5CF6",
-      "order": 1
+      "order": 2
     },
     {
       "id": "webapp",
       "name": "Web App Development",
       "color": "#10B981",
-      "order": 2
-    },
-    {
-      "id": "md-modeling",
-      "name": "Molecular Dynamics Modeling",
-      "color": "#06B6D4",
       "order": 3
-    },
-    {
-      "id": "operations",
-      "name": "Operations",
-      "color": "#6366F1",
-      "order": 4
     },
     {
       "id": "mdx2",
       "name": "Data Processing (MDx2)",
       "color": "#EC4899",
-      "order": 5
+      "order": 4
     },
     {
       "id": "data-acquisition",
       "name": "Data Acquisition",
       "color": "#14B8A6",
-      "order": 6
+      "order": 5
     },
     {
       "id": "encoding",
       "name": "Encoding",
       "color": "#F97316",
+      "order": 6
+    },
+    {
+      "id": "operations",
+      "name": "Simulation",
+      "color": "#6366F1",
       "order": 7
+    },
+    {
+      "id": "FPJM4pxlN0YoN5UR0_tVw",
+      "name": "Operations",
+      "color": "#3B82F6",
+      "order": 8
     }
   ],
   "items": [
     {
-      "id": "compute-cluster-setup",
       "type": "milestone",
-      "title": "GPU cluster provisioned",
-      "description": "Initial 8-node GPU cluster setup with SLURM scheduler",
-      "stage": "old",
+      "title": "Meet with James (VP CEO), Michael, Moody, Justin, Joseph, Andy weekly",
+      "stage": "short-term",
       "swimlaneId": "compute",
-      "reportedDate": "Modeling meeting October 15",
+      "id": "d5kERaoC5p3FRJuPtWifw",
+      "itemLastUpdated": "2026-01-14T19:13:51.764Z"
+    },
+    {
+      "type": "milestone",
+      "title": "Establish SOP for data sharing internally and externally",
+      "stage": "short-term",
+      "swimlaneId": "compute",
+      "id": "dytiKdRNe54iQs63qhkW2",
+      "itemLastUpdated": "2026-01-14T19:14:55.289Z",
+      "enables": []
+    },
+    {
+      "type": "goal",
+      "title": "diffuse.app is consistent with FAIR-squared",
+      "stage": "long-term",
+      "swimlaneId": "compute",
+      "id": "t0HC0aT5OduFiKeKlzExg",
+      "itemLastUpdated": "2026-01-14T19:21:30.464Z",
+      "description": "",
+      "enables": [
+        "hOBrGztGQVq6acMq-JhAQ"
+      ]
+    },
+    {
+      "type": "milestone",
+      "title": "Implement AI copiloting to assist with development",
+      "stage": "recent",
+      "swimlaneId": "mdx2",
+      "id": "m7nITf_xT9hjxNAV5h8r3",
+      "itemLastUpdated": "2026-01-14T19:19:43.358Z"
+    },
+    {
+      "type": "milestone",
+      "title": "make mdx2 pip installable",
+      "stage": "recent",
+      "swimlaneId": "mdx2",
+      "id": "LnZRI98yxf0TiCzAJ-isL",
+      "itemLastUpdated": "2026-01-14T19:33:51.944Z",
+      "isWin": true,
       "completed": true
     },
     {
-      "id": "compute-kubernetes",
-      "type": "milestone",
-      "title": "Kubernetes deployment",
-      "description": "K8s cluster for model serving and batch jobs",
-      "stage": "recent",
+      "type": "blocker",
+      "title": "Established workflow for queue management with Prefect, socialized and accessible by all users",
+      "stage": "short-term",
       "swimlaneId": "compute",
-      "reportedDate": "Modeling meeting January 8",
+      "id": "hhsTojeIH_3zKMH5MPA4g",
+      "itemLastUpdated": "2026-01-14T19:29:21.754Z",
+      "blockerStatus": "open",
+      "enables": [
+        "_q2MgfyUCdARmONjaV8sz",
+        "GBHsr-JjxoJlNZiM1feFg",
+        "hOBrGztGQVq6acMq-JhAQ"
+      ],
+      "description": "",
+      "subItems": [
+        {
+          "id": "fJRdGTmh3XfI6rUPzAWTx",
+          "title": "Develop SOP for Prefect and queuing",
+          "completed": false,
+          "order": 0,
+          "subStageId": "up-next"
+        },
+        {
+          "id": "517SsBvWsGuf1IX25cSNK",
+          "title": "Test SOP with poweruser",
+          "completed": false,
+          "order": 1,
+          "subStageId": "in-progress"
+        },
+        {
+          "id": "ndErAgtsa598UgUkP89wd",
+          "title": "Disseminate protocol",
+          "completed": false,
+          "order": 2,
+          "subStageId": "backlog"
+        }
+      ],
+      "subItemConfig": {
+        "viewType": "kanban",
+        "customStages": [
+          {
+            "id": "done",
+            "label": "Done",
+            "order": 0
+          },
+          {
+            "id": "in-progress",
+            "label": "In Progress",
+            "order": 1
+          },
+          {
+            "id": "up-next",
+            "label": "Up Next",
+            "order": 2
+          },
+          {
+            "id": "backlog",
+            "label": "Backlog",
+            "order": 3
+          }
+        ],
+        "customStatusTags": [
+          {
+            "id": "not-started",
+            "label": "Not Started",
+            "color": "#6B7280"
+          },
+          {
+            "id": "in-progress",
+            "label": "In Progress",
+            "color": "#3B82F6"
+          },
+          {
+            "id": "blocked",
+            "label": "Blocked",
+            "color": "#EF4444"
+          },
+          {
+            "id": "in-review",
+            "label": "In Review",
+            "color": "#F59E0B"
+          },
+          {
+            "id": "done",
+            "label": "Done",
+            "color": "#10B981"
+          }
+        ]
+      }
+    },
+    {
+      "type": "milestone",
+      "title": "Connect basic data acquisition with Prefect workflow/SOP",
+      "stage": "short-term",
+      "swimlaneId": "data-acquisition",
+      "id": "GBHsr-JjxoJlNZiM1feFg",
+      "itemLastUpdated": "2026-01-14T19:22:07.469Z",
+      "dependsOn": [
+        "hhsTojeIH_3zKMH5MPA4g"
+      ]
+    },
+    {
+      "type": "milestone",
+      "title": "Build out testing",
+      "stage": "short-term",
+      "swimlaneId": "mdx2",
+      "id": "LeceKtgyt_L2wKQrbVOrq",
+      "itemLastUpdated": "2026-01-16T21:12:58.468Z"
+    },
+    {
+      "type": "goal",
+      "title": "VM stability and queueing system",
+      "stage": "short-term",
+      "swimlaneId": "md-modeling",
+      "id": "WYnZlkFqm6KSOguPBj-G-",
+      "itemLastUpdated": "2026-01-14T19:28:20.038Z",
+      "dependsOn": []
+    },
+    {
+      "type": "goal",
+      "title": "All raw and analyzed data sharing done on webapp with versioning and persistent identifiers",
+      "stage": "long-term",
+      "swimlaneId": "webapp",
+      "id": "hOBrGztGQVq6acMq-JhAQ",
+      "itemLastUpdated": "2026-01-14T19:30:53.836Z",
+      "dependsOn": [
+        "hhsTojeIH_3zKMH5MPA4g",
+        "t0HC0aT5OduFiKeKlzExg"
+      ]
+    },
+    {
+      "type": "milestone",
+      "title": "Connect mdx2 basic processing with Prefect workflow",
+      "stage": "short-term",
+      "swimlaneId": "mdx2",
+      "id": "_q2MgfyUCdARmONjaV8sz",
+      "itemLastUpdated": "2026-01-14T19:31:43.025Z",
+      "dependsOn": [
+        "hhsTojeIH_3zKMH5MPA4g"
+      ]
+    },
+    {
+      "type": "goal",
+      "title": "Tested Mac1 + ADP-ribose (7TX0) simulation",
+      "stage": "recent",
+      "swimlaneId": "md-modeling",
+      "id": "NNpBm8nj04xE6ij7u9ioc",
+      "itemLastUpdated": "2026-01-16T21:21:47.977Z",
+      "completed": true,
+      "isWin": true,
       "links": [
         {
-          "id": "link-1",
-          "url": "https://docs.google.com/document/d/example",
-          "label": "Architecture Doc",
-          "type": "gdoc"
+          "url": "https://docs.google.com/presentation/d/1_K_YZy8HRRqBXtKjI1603MV0NDKyU_x84DzRYyci-qQ/edit?slide=id.g3acf7975c30_0_11&pli=1#slide=id.g3acf7975c30_0_11",
+          "label": "Slides from Modeling meeting 2026-01-09",
+          "type": "gdoc",
+          "id": "pPR62GVOHXikSdDlMNITX"
         }
-      ]
-    },
-    {
-      "id": "compute-scaling",
-      "type": "goal",
-      "title": "Scale to 32 nodes",
-      "description": "Expand cluster capacity for larger training runs",
-      "stage": "short-term",
-      "swimlaneId": "compute",
-      "checkIns": [
+      ],
+      "enables": [
+        "xcqT1fA8VBFtUNSUxaSUz"
+      ],
+      "changeLog": [
         {
-          "id": "ci-1",
-          "label": "Hardware review February 10",
-          "completed": false
+          "id": "EjiTh5pOoLirjwWF9xDHm",
+          "type": "completed",
+          "timestamp": "2026-01-16T21:21:47.978Z",
+          "description": "Marked as completed"
         }
       ]
     },
     {
-      "id": "compute-multi-region",
       "type": "goal",
-      "title": "Multi-region deployment",
-      "description": "Distribute compute across AWS regions for redundancy",
+      "title": "Sampleworks: Implement model-agnostic biomolecular ensemble guidance with experimental data",
       "stage": "long-term",
-      "swimlaneId": "compute"
-    },
-    {
-      "id": "ml-baseline",
-      "type": "milestone",
-      "title": "Baseline model trained",
-      "description": "First iteration of protein structure prediction model\n\n- 85% accuracy on validation set\n- 2M parameters\n- Training time: 48 hours",
-      "stage": "old",
       "swimlaneId": "ml-modeling",
-      "reportedDate": "Modeling meeting November 20",
-      "completed": true
+      "id": "sZJpDiYewX3wcLcYMOrIe",
+      "itemLastUpdated": "2026-01-14T19:45:16.358Z"
     },
     {
-      "id": "ml-v2-training",
+      "type": "goal",
+      "title": "Demonstrated ability to improve MD diffraction",
+      "stage": "short-term",
+      "swimlaneId": "md-modeling",
+      "id": "xcqT1fA8VBFtUNSUxaSUz",
+      "itemLastUpdated": "2026-01-14T19:42:25.090Z",
+      "dependsOn": [
+        "NNpBm8nj04xE6ij7u9ioc"
+      ],
+      "subItemConfig": {
+        "viewType": "kanban",
+        "customStages": [
+          {
+            "id": "done",
+            "label": "Done",
+            "order": 0
+          },
+          {
+            "id": "in-progress",
+            "label": "In Progress",
+            "order": 1
+          },
+          {
+            "id": "up-next",
+            "label": "Up Next",
+            "order": 2
+          },
+          {
+            "id": "backlog",
+            "label": "Backlog",
+            "order": 3
+          }
+        ],
+        "customStatusTags": [
+          {
+            "id": "not-started",
+            "label": "Not Started",
+            "color": "#6B7280"
+          },
+          {
+            "id": "in-progress",
+            "label": "In Progress",
+            "color": "#3B82F6"
+          },
+          {
+            "id": "blocked",
+            "label": "Blocked",
+            "color": "#EF4444"
+          },
+          {
+            "id": "in-review",
+            "label": "In Review",
+            "color": "#F59E0B"
+          },
+          {
+            "id": "done",
+            "label": "Done",
+            "color": "#10B981"
+          }
+        ]
+      },
+      "subItems": [
+        {
+          "id": "bA0nGUCRkbd1EDG8Hy4EY",
+          "title": "Mac1 + ADP ribose completed",
+          "completed": true,
+          "order": 0,
+          "subStageId": "done"
+        },
+        {
+          "id": "uYgwrfze3JLmZdbkxnVgr",
+          "title": "Mac1 + ADP ribose with sorted waters diffuse simulation",
+          "completed": false,
+          "order": 1,
+          "subStageId": "in-progress"
+        },
+        {
+          "id": "TjKb7lf9D7y3nIQBXsxe6",
+          "title": "Mac1 + ADPr calculation and analysis of improvement",
+          "completed": false,
+          "order": 3,
+          "subStageId": "up-next"
+        },
+        {
+          "id": "ud666GfCcRr971iO_JIQT",
+          "title": "DHFR calculation and analysis of improvement",
+          "completed": false,
+          "order": 3,
+          "subStageId": "up-next"
+        }
+      ]
+    },
+    {
       "type": "milestone",
-      "title": "V2 model in training",
-      "description": "Improved architecture with attention mechanisms\n\n- 94% accuracy on validation set (up from 85%)\n- Novel attention mechanism for long-range interactions\n- 3x faster inference",
-      "stage": "recent",
-      "swimlaneId": "ml-modeling",
-      "reportedDate": "Modeling meeting January 12",
-      "dependsOn": ["compute-kubernetes"],
-      "isWin": true
+      "title": "testing of another system and ability to improve: DHFR (7FPV) simulation",
+      "stage": "short-term",
+      "swimlaneId": "md-modeling",
+      "id": "Hl751WCRo7VMsJsMuKJwE",
+      "itemLastUpdated": "2026-01-14T19:39:19.139Z",
+      "subItemConfig": {
+        "viewType": "kanban",
+        "customStages": [
+          {
+            "id": "done",
+            "label": "Done",
+            "order": 0
+          },
+          {
+            "id": "in-progress",
+            "label": "In Progress",
+            "order": 1
+          },
+          {
+            "id": "up-next",
+            "label": "Up Next",
+            "order": 2
+          },
+          {
+            "id": "backlog",
+            "label": "Backlog",
+            "order": 3
+          }
+        ],
+        "customStatusTags": [
+          {
+            "id": "not-started",
+            "label": "Not Started",
+            "color": "#6B7280"
+          },
+          {
+            "id": "in-progress",
+            "label": "In Progress",
+            "color": "#3B82F6"
+          },
+          {
+            "id": "blocked",
+            "label": "Blocked",
+            "color": "#EF4444"
+          },
+          {
+            "id": "in-review",
+            "label": "In Review",
+            "color": "#F59E0B"
+          },
+          {
+            "id": "done",
+            "label": "Done",
+            "color": "#10B981"
+          }
+        ]
+      },
+      "subItems": [
+        {
+          "id": "iR0X6CmQ4ubLL_onoNPuo",
+          "title": "Restrained simulation",
+          "completed": false,
+          "order": 0,
+          "subStageId": "in-progress"
+        },
+        {
+          "id": "ZgBA4QqH0NpZifIOaCZP2",
+          "title": "Unrestrained simulation",
+          "completed": false,
+          "order": 1,
+          "subStageId": "up-next"
+        }
+      ]
     },
     {
-      "id": "ml-blocker-data",
       "type": "blocker",
-      "title": "Training data quality issues",
-      "description": "Found inconsistencies in labeled dataset affecting model convergence",
-      "stage": "recent",
-      "swimlaneId": "ml-modeling",
-      "blockerStatus": "mitigated",
-      "enables": ["ml-v2-training"]
-    },
-    {
-      "id": "ml-publication",
-      "type": "goal",
-      "title": "Submit to Nature Methods",
-      "description": "Prepare manuscript for peer review",
+      "title": "GAUSSIAN is expensive and restrictive.",
       "stage": "short-term",
-      "swimlaneId": "ml-modeling",
-      "dependsOn": ["ml-v2-training"],
-      "checkIns": [
-        {
-          "id": "ci-2",
-          "label": "Draft review March 1",
-          "completed": false
-        }
-      ]
-    },
-    {
-      "id": "ml-foundation",
-      "type": "goal",
-      "title": "Foundation model development",
-      "description": "Large-scale pre-trained model for multiple downstream tasks",
-      "stage": "long-term",
-      "swimlaneId": "ml-modeling",
-      "dependsOn": ["compute-scaling"]
-    },
-    {
-      "id": "webapp-mvp",
-      "type": "milestone",
-      "title": "MVP launched",
-      "description": "Initial web interface for structure visualization",
-      "stage": "old",
-      "swimlaneId": "webapp",
-      "reportedDate": "Sprint review December 1",
-      "completed": true
-    },
-    {
-      "id": "webapp-api",
-      "type": "milestone",
-      "title": "REST API v1 deployed",
-      "description": "Public API for programmatic access to predictions",
-      "stage": "recent",
-      "swimlaneId": "webapp",
-      "reportedDate": "Sprint review January 10",
-      "links": [
-        {
-          "id": "link-2",
-          "url": "https://api.example.com/docs",
-          "label": "API Documentation",
-          "type": "other"
-        }
-      ]
-    },
-    {
-      "id": "webapp-batch",
-      "type": "goal",
-      "title": "Batch processing UI",
-      "description": "Interface for submitting large-scale prediction jobs",
-      "stage": "short-term",
-      "swimlaneId": "webapp",
-      "dependsOn": ["webapp-api"]
-    },
-    {
-      "id": "webapp-collaboration",
-      "type": "goal",
-      "title": "Collaboration features",
-      "description": "Team workspaces and shared annotations",
-      "stage": "long-term",
-      "swimlaneId": "webapp"
-    },
-    {
-      "id": "md-forcefield",
-      "type": "milestone",
-      "title": "Custom forcefield validated",
-      "description": "Novel forcefield parameters for membrane proteins",
-      "stage": "old",
       "swimlaneId": "md-modeling",
-      "reportedDate": "Lab meeting September 5",
-      "completed": true
-    },
-    {
-      "id": "md-simulations",
-      "type": "milestone",
-      "title": "100ns simulations complete",
-      "description": "Benchmark simulations on target protein family",
-      "stage": "recent",
-      "swimlaneId": "md-modeling",
-      "reportedDate": "Lab meeting January 5",
-      "dependsOn": ["md-forcefield"]
-    },
-    {
-      "id": "md-blocker-convergence",
-      "type": "blocker",
-      "title": "Simulation convergence issues",
-      "description": "Some systems showing unexpected drift in RMSD",
-      "stage": "recent",
-      "swimlaneId": "md-modeling",
+      "id": "gn5dErnDbvGi257f3TGAs",
+      "itemLastUpdated": "2026-01-14T19:42:01.786Z",
+      "description": "Mike will reach out to Phenix people to see what they have been working on instead for this. ",
       "blockerStatus": "open"
     },
     {
-      "id": "md-enhanced",
-      "type": "goal",
-      "title": "Enhanced sampling methods",
-      "description": "Implement metadynamics and replica exchange",
+      "type": "milestone",
+      "title": "Establish regular standing meeting with Kara, Steve",
       "stage": "short-term",
-      "swimlaneId": "md-modeling",
-      "dependsOn": ["md-simulations"]
+      "swimlaneId": "data-acquisition",
+      "id": "m-NV3wzdXJKZ11wwnLPsa",
+      "itemLastUpdated": "2026-01-14T19:44:52.686Z"
     },
     {
-      "id": "md-integration",
-      "type": "goal",
-      "title": "ML-MD integration",
-      "description": "Use ML predictions to initialize MD simulations",
-      "stage": "long-term",
-      "swimlaneId": "md-modeling",
-      "dependsOn": ["ml-foundation", "md-enhanced"]
-    },
-    {
-      "id": "ops-ci-cd",
       "type": "milestone",
-      "title": "CI/CD pipeline established",
-      "description": "Automated testing and deployment workflows",
-      "stage": "old",
-      "swimlaneId": "operations",
-      "completed": true
+      "title": "Sampleworks: Pipeline can accept experimental data and generative models",
+      "stage": "short-term",
+      "swimlaneId": "ml-modeling",
+      "id": "SWMeaLPpdXDDWtSmzLH58",
+      "itemLastUpdated": "2026-01-14T19:48:54.613Z",
+      "description": ""
     },
     {
-      "id": "ops-monitoring",
       "type": "milestone",
-      "title": "Monitoring dashboard live",
-      "description": "Grafana dashboards for cluster and service health",
+      "title": "Sampleworks: Ability to do guided sampling of ensembles, providing output model with corresponding metrics",
+      "stage": "short-term",
+      "swimlaneId": "ml-modeling",
+      "id": "eRNApCCbjA9apUPXvL9PD",
+      "itemLastUpdated": "2026-01-14T19:48:35.643Z",
+      "description": ""
+    },
+    {
+      "type": "output",
+      "title": "Sampleworks: Initial water generative model benchmarked against experimental data",
+      "stage": "short-term",
+      "swimlaneId": "ml-modeling",
+      "id": "guYYyLmu4EQkVEKsORIuB",
+      "itemLastUpdated": "2026-01-14T19:52:34.145Z",
+      "description": ""
+    },
+    {
+      "type": "blocker",
+      "title": "Scaling issues with refactoring and API calls",
       "stage": "recent",
-      "swimlaneId": "operations",
-      "reportedDate": "Ops review January 3"
-    },
-    {
-      "id": "ops-cost",
-      "type": "goal",
-      "title": "Cost optimization review",
-      "description": "Analyze and reduce cloud spending",
-      "stage": "short-term",
-      "swimlaneId": "operations",
-      "checkIns": [
+      "swimlaneId": "ml-modeling",
+      "id": "OmRI4qAqyZMa-OICrSa4x",
+      "itemLastUpdated": "2026-01-14T19:50:21.597Z",
+      "blockerStatus": "resolved",
+      "subItems": [
         {
-          "id": "ci-3",
-          "label": "Finance review February 20",
-          "completed": false
+          "id": "Rn-hvDvTujKop6_H9W1uE",
+          "title": "Refactoring guidance scripts enables us to run continuously without reloading models",
+          "completed": true,
+          "order": 0,
+          "subStageId": "backlog"
+        },
+        {
+          "id": "TORG5rAqF806gkAmvONtG",
+          "title": "Reduced API calls, avoid throttling for MSAs by creating a local on-disk cache.",
+          "completed": true,
+          "order": 1,
+          "subStageId": "backlog"
         }
-      ]
+      ],
+      "subItemConfig": {
+        "viewType": "tasks",
+        "customStages": [
+          {
+            "id": "done",
+            "label": "Done",
+            "order": 0
+          },
+          {
+            "id": "in-progress",
+            "label": "In Progress",
+            "order": 1
+          },
+          {
+            "id": "up-next",
+            "label": "Up Next",
+            "order": 2
+          },
+          {
+            "id": "backlog",
+            "label": "Backlog",
+            "order": 3
+          }
+        ],
+        "customStatusTags": [
+          {
+            "id": "not-started",
+            "label": "Not Started",
+            "color": "#6B7280"
+          },
+          {
+            "id": "in-progress",
+            "label": "In Progress",
+            "color": "#3B82F6"
+          },
+          {
+            "id": "blocked",
+            "label": "Blocked",
+            "color": "#EF4444"
+          },
+          {
+            "id": "in-review",
+            "label": "In Review",
+            "color": "#F59E0B"
+          },
+          {
+            "id": "done",
+            "label": "Done",
+            "color": "#10B981"
+          }
+        ]
+      },
+      "description": ""
     },
     {
-      "id": "mdx2-pipeline",
-      "type": "milestone",
-      "title": "Processing pipeline v1",
-      "description": "Automated data extraction and normalization",
-      "stage": "old",
-      "swimlaneId": "mdx2",
-      "completed": true
-    },
-    {
-      "id": "mdx2-quality",
-      "type": "milestone",
-      "title": "Quality control module",
-      "description": "Automated QC checks with reporting",
-      "stage": "recent",
-      "swimlaneId": "mdx2",
-      "reportedDate": "Data team sync January 9",
-      "enables": ["ml-blocker-data"]
-    },
-    {
-      "id": "mdx2-scale",
-      "type": "goal",
-      "title": "Scale to 10TB/day",
-      "description": "Handle increased data throughput",
+      "type": "output",
+      "title": "Sampleworks: Test 40 structure dataset",
       "stage": "short-term",
-      "swimlaneId": "mdx2",
-      "dependsOn": ["compute-scaling"]
+      "swimlaneId": "ml-modeling",
+      "id": "tX5-R9AThl8QfX_ZGLnvb",
+      "itemLastUpdated": "2026-01-14T19:52:28.532Z",
+      "description": ""
     },
     {
-      "id": "data-acq-partners",
       "type": "milestone",
-      "title": "Partner agreements signed",
-      "description": "Data sharing agreements with 3 institutions",
-      "stage": "old",
-      "swimlaneId": "data-acquisition",
+      "title": "Sampleworks: Implemented RSCC for maps computed from sampled conformers",
+      "stage": "recent",
+      "swimlaneId": "ml-modeling",
+      "id": "9U08e_xH2KZPEntrjosXC",
+      "itemLastUpdated": "2026-01-14T19:49:39.263Z",
       "completed": true
     },
     {
-      "id": "data-acq-ingestion",
-      "type": "milestone",
-      "title": "First external dataset ingested",
-      "description": "Successfully imported partner data into pipeline",
-      "stage": "recent",
-      "swimlaneId": "data-acquisition",
-      "reportedDate": "Data governance meeting January 6"
-    },
-    {
-      "id": "data-acq-expansion",
-      "type": "goal",
-      "title": "Expand to 10 partners",
-      "description": "Scale data acquisition program",
-      "stage": "long-term",
-      "swimlaneId": "data-acquisition"
-    },
-    {
-      "id": "encoding-schema",
-      "type": "milestone",
-      "title": "Encoding schema finalized",
-      "description": "Standard representation for molecular structures",
-      "stage": "old",
-      "swimlaneId": "encoding",
-      "completed": true
-    },
-    {
-      "id": "encoding-tokenizer",
-      "type": "milestone",
-      "title": "Tokenizer released",
-      "description": "Open-source tokenization library",
-      "stage": "recent",
-      "swimlaneId": "encoding",
-      "reportedDate": "Team meeting January 7",
+      "type": "output",
+      "title": "Sampleworks: Clustering conformers based on LDDT. Comparing cluster sizes to experimental occupancy, LDDT to nearest altloc.",
+      "stage": "short-term",
+      "swimlaneId": "ml-modeling",
+      "id": "mBAUOxUXq7MYx9x8t5GN4",
+      "itemLastUpdated": "2026-01-14T19:50:11.693Z",
       "links": [
         {
-          "id": "link-3",
-          "url": "https://github.com/example/tokenizer",
-          "label": "GitHub Repo",
-          "type": "github"
+          "url": "https://docs.google.com/presentation/d/1_K_YZy8HRRqBXtKjI1603MV0NDKyU_x84DzRYyci-qQ/edit?slide=id.g3b5e85cd564_3_5&pli=1#slide=id.g3b5e85cd564_3_5",
+          "label": "Initial LDDT clustering results",
+          "type": "gdoc",
+          "id": "aPpFS_rN3s3ZAwgEDNE3c"
         }
       ]
     },
     {
-      "id": "encoding-optimization",
-      "type": "goal",
-      "title": "Encoding optimization",
-      "description": "Reduce token count by 30% while preserving information",
-      "stage": "short-term",
-      "swimlaneId": "encoding",
-      "dependsOn": ["encoding-tokenizer"]
+      "type": "milestone",
+      "title": "⭐ Sampleworks comprehensive tests",
+      "stage": "long-term",
+      "swimlaneId": "ml-modeling",
+      "id": "6rr_BRKWcxEGiMtZ1Cp0a",
+      "itemLastUpdated": "2026-01-14T19:52:38.113Z"
     },
     {
-      "id": "encoding-multimodal",
-      "type": "goal",
-      "title": "Multimodal encoding",
-      "description": "Unified encoding for structure + sequence + dynamics",
+      "type": "milestone",
+      "title": "⭐Sampleworks: refactoring model sampling/guidance",
       "stage": "long-term",
+      "swimlaneId": "ml-modeling",
+      "id": "AGHICqDv4Mz8V3EC7rIwo",
+      "itemLastUpdated": "2026-01-14T19:52:39.012Z"
+    },
+    {
+      "type": "milestone",
+      "title": "⭐Sampleworks: generalizing the reward functions for future usage with multiple experimental modalities",
+      "stage": "long-term",
+      "swimlaneId": "ml-modeling",
+      "id": "U5j55q4gyr7ec40X2lFdr",
+      "itemLastUpdated": "2026-01-14T19:52:39.912Z"
+    },
+    {
+      "type": "blocker",
+      "title": "Water modeling requires multiple VP GPUs",
+      "stage": "short-term",
+      "swimlaneId": "ml-modeling",
+      "id": "hPyAjdULHa0q7zMvj7up0",
+      "itemLastUpdated": "2026-01-14T19:53:28.970Z",
+      "blockerStatus": "open"
+    },
+    {
+      "type": "milestone",
+      "title": "mmCIF working group meeting",
+      "stage": "short-term",
       "swimlaneId": "encoding",
-      "dependsOn": ["md-integration", "encoding-optimization"]
+      "id": "cIxC7AUjNxBCWZW7il-HX",
+      "itemLastUpdated": "2026-01-14T19:54:07.392Z"
+    },
+    {
+      "type": "milestone",
+      "title": "Figured out path to adding GUI extension to coot 1.0+",
+      "stage": "recent",
+      "swimlaneId": "encoding",
+      "id": "Wbie6_kEUSpVZ8r6GRTzP",
+      "itemLastUpdated": "2026-01-14T19:54:25.672Z",
+      "completed": true,
+      "isWin": true
+    },
+    {
+      "type": "milestone",
+      "title": "Workflow outlining for generating hierarchical models from multiconformer models",
+      "stage": "short-term",
+      "swimlaneId": "encoding",
+      "id": "I6OXfOYEOr4CP3mm-FwOt",
+      "itemLastUpdated": "2026-01-14T19:54:34.779Z",
+      "subItemConfig": {
+        "viewType": "kanban",
+        "customStages": [
+          {
+            "id": "done",
+            "label": "Done",
+            "order": 0
+          },
+          {
+            "id": "in-progress",
+            "label": "In Progress",
+            "order": 1
+          },
+          {
+            "id": "up-next",
+            "label": "Up Next",
+            "order": 2
+          },
+          {
+            "id": "backlog",
+            "label": "Backlog",
+            "order": 3
+          }
+        ],
+        "customStatusTags": [
+          {
+            "id": "not-started",
+            "label": "Not Started",
+            "color": "#6B7280"
+          },
+          {
+            "id": "in-progress",
+            "label": "In Progress",
+            "color": "#3B82F6"
+          },
+          {
+            "id": "blocked",
+            "label": "Blocked",
+            "color": "#EF4444"
+          },
+          {
+            "id": "in-review",
+            "label": "In Review",
+            "color": "#F59E0B"
+          },
+          {
+            "id": "done",
+            "label": "Done",
+            "color": "#10B981"
+          }
+        ]
+      }
+    },
+    {
+      "type": "milestone",
+      "title": "Gemmi integration",
+      "stage": "short-term",
+      "swimlaneId": "encoding",
+      "id": "9DD-SI2RiBxW3LStoHdGX",
+      "itemLastUpdated": "2026-01-14T19:54:47.438Z"
+    },
+    {
+      "type": "goal",
+      "title": "nanoBragg at Voltage Park",
+      "stage": "short-term",
+      "swimlaneId": "operations",
+      "id": "lBiJuFQLmvQi2ArQn6xZW",
+      "itemLastUpdated": "2026-01-14T21:35:47.436Z"
+    },
+    {
+      "type": "milestone",
+      "title": "Increase quality of simulation through data processing and sample handling",
+      "stage": "short-term",
+      "swimlaneId": "operations",
+      "id": "LR-kyA_9xSXph_l8F55n0",
+      "itemLastUpdated": "2026-01-14T21:36:49.386Z",
+      "dependsOn": [
+        "sEXjxDqspD6RvtsUfTG_R"
+      ]
+    },
+    {
+      "type": "blocker",
+      "title": "Initial simulations showed that DS is weak and radiation intolerant due",
+      "stage": "recent",
+      "swimlaneId": "operations",
+      "id": "sEXjxDqspD6RvtsUfTG_R",
+      "itemLastUpdated": "2026-01-14T21:37:38.368Z",
+      "blockerStatus": "open",
+      "enables": [
+        "LR-kyA_9xSXph_l8F55n0"
+      ]
+    },
+    {
+      "type": "goal",
+      "title": "Preprint roadmap",
+      "stage": "long-term",
+      "swimlaneId": "FPJM4pxlN0YoN5UR0_tVw",
+      "id": "Yj5Fa39hI4fJReq7TUboy",
+      "itemLastUpdated": "2026-01-14T21:44:01.907Z",
+      "links": [
+        {
+          "url": "https://docs.google.com/document/d/1l9indOXIkmmgpbtmcthcOYDNYMEPeNkNtqtj_7X1exs/edit?pli=1&tab=t.0#heading=h.fjkomm8fhfv7",
+          "label": "draft publication guidance",
+          "type": "gdoc",
+          "id": "T5TjSQjIUP4B2MC6lBsqW"
+        },
+        {
+          "url": "https://docs.google.com/document/d/1xVD3v1giIFs5ugxAWbdn2Wc4dhtkm_QHFgwwFahHTIQ/edit?tab=t.0#heading=h.avx946pa3p1q",
+          "label": "diffUSE roadmap preprint",
+          "type": "gdoc",
+          "id": "6fScjVrROp8dzlGLnTXQN"
+        }
+      ],
+      "dependsOn": [
+        "i6-LGcPG7jfdAP4RNL-tl"
+      ]
+    },
+    {
+      "type": "milestone",
+      "title": "FAIR compliance",
+      "stage": "short-term",
+      "swimlaneId": "FPJM4pxlN0YoN5UR0_tVw",
+      "id": "i6-LGcPG7jfdAP4RNL-tl",
+      "itemLastUpdated": "2026-01-14T21:44:25.899Z",
+      "enables": [
+        "Yj5Fa39hI4fJReq7TUboy"
+      ]
+    },
+    {
+      "type": "goal",
+      "title": "Data processing is consistent between beamlines and users",
+      "stage": "long-term",
+      "swimlaneId": "mdx2",
+      "id": "qm_ZfRvur_2-t4uSpbIDQ",
+      "itemLastUpdated": "2026-01-16T21:12:53.825Z"
+    },
+    {
+      "type": "milestone",
+      "title": "onboarding demo for all researchers",
+      "stage": "short-term",
+      "swimlaneId": "webapp",
+      "id": "_6gdcj2FULBtGwyn1bi_K",
+      "itemLastUpdated": "2026-01-16T22:20:19.700Z",
+      "changeLog": [
+        {
+          "id": "2hwzYhuCxk_l19nSOKE8j",
+          "type": "created",
+          "timestamp": "2026-01-16T22:20:12.012Z",
+          "description": "Item created"
+        }
+      ],
+      "targetDate": "2026-01-22"
     }
   ]
 }
