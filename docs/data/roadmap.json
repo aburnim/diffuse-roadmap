@@ -1,0 +1,384 @@
+{
+  "title": "Research Program Roadmap",
+  "lastUpdated": "2025-01-13T00:00:00.000Z",
+  "swimlanes": [
+    {
+      "id": "compute",
+      "name": "Compute Infrastructure",
+      "color": "#3B82F6",
+      "order": 0
+    },
+    {
+      "id": "ml-modeling",
+      "name": "Machine Learning Modeling",
+      "color": "#8B5CF6",
+      "order": 1
+    },
+    {
+      "id": "webapp",
+      "name": "Web App Development",
+      "color": "#10B981",
+      "order": 2
+    },
+    {
+      "id": "md-modeling",
+      "name": "Molecular Dynamics Modeling",
+      "color": "#06B6D4",
+      "order": 3
+    },
+    {
+      "id": "operations",
+      "name": "Operations",
+      "color": "#6366F1",
+      "order": 4
+    },
+    {
+      "id": "mdx2",
+      "name": "Data Processing (MDx2)",
+      "color": "#EC4899",
+      "order": 5
+    },
+    {
+      "id": "data-acquisition",
+      "name": "Data Acquisition",
+      "color": "#14B8A6",
+      "order": 6
+    },
+    {
+      "id": "encoding",
+      "name": "Encoding",
+      "color": "#F97316",
+      "order": 7
+    }
+  ],
+  "items": [
+    {
+      "id": "compute-cluster-setup",
+      "type": "milestone",
+      "title": "GPU cluster provisioned",
+      "description": "Initial 8-node GPU cluster setup with SLURM scheduler",
+      "stage": "old",
+      "swimlaneId": "compute",
+      "reportedDate": "Modeling meeting October 15",
+      "completed": true
+    },
+    {
+      "id": "compute-kubernetes",
+      "type": "milestone",
+      "title": "Kubernetes deployment",
+      "description": "K8s cluster for model serving and batch jobs",
+      "stage": "recent",
+      "swimlaneId": "compute",
+      "reportedDate": "Modeling meeting January 8",
+      "links": [
+        {
+          "id": "link-1",
+          "url": "https://docs.google.com/document/d/example",
+          "label": "Architecture Doc",
+          "type": "gdoc"
+        }
+      ]
+    },
+    {
+      "id": "compute-scaling",
+      "type": "goal",
+      "title": "Scale to 32 nodes",
+      "description": "Expand cluster capacity for larger training runs",
+      "stage": "short-term",
+      "swimlaneId": "compute",
+      "checkIns": [
+        {
+          "id": "ci-1",
+          "label": "Hardware review February 10",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "compute-multi-region",
+      "type": "goal",
+      "title": "Multi-region deployment",
+      "description": "Distribute compute across AWS regions for redundancy",
+      "stage": "long-term",
+      "swimlaneId": "compute"
+    },
+    {
+      "id": "ml-baseline",
+      "type": "milestone",
+      "title": "Baseline model trained",
+      "description": "First iteration of protein structure prediction model\n\n- 85% accuracy on validation set\n- 2M parameters\n- Training time: 48 hours",
+      "stage": "old",
+      "swimlaneId": "ml-modeling",
+      "reportedDate": "Modeling meeting November 20",
+      "completed": true
+    },
+    {
+      "id": "ml-v2-training",
+      "type": "milestone",
+      "title": "V2 model in training",
+      "description": "Improved architecture with attention mechanisms\n\n- 94% accuracy on validation set (up from 85%)\n- Novel attention mechanism for long-range interactions\n- 3x faster inference",
+      "stage": "recent",
+      "swimlaneId": "ml-modeling",
+      "reportedDate": "Modeling meeting January 12",
+      "dependsOn": ["compute-kubernetes"],
+      "isWin": true
+    },
+    {
+      "id": "ml-blocker-data",
+      "type": "blocker",
+      "title": "Training data quality issues",
+      "description": "Found inconsistencies in labeled dataset affecting model convergence",
+      "stage": "recent",
+      "swimlaneId": "ml-modeling",
+      "blockerStatus": "mitigated",
+      "enables": ["ml-v2-training"]
+    },
+    {
+      "id": "ml-publication",
+      "type": "goal",
+      "title": "Submit to Nature Methods",
+      "description": "Prepare manuscript for peer review",
+      "stage": "short-term",
+      "swimlaneId": "ml-modeling",
+      "dependsOn": ["ml-v2-training"],
+      "checkIns": [
+        {
+          "id": "ci-2",
+          "label": "Draft review March 1",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "ml-foundation",
+      "type": "goal",
+      "title": "Foundation model development",
+      "description": "Large-scale pre-trained model for multiple downstream tasks",
+      "stage": "long-term",
+      "swimlaneId": "ml-modeling",
+      "dependsOn": ["compute-scaling"]
+    },
+    {
+      "id": "webapp-mvp",
+      "type": "milestone",
+      "title": "MVP launched",
+      "description": "Initial web interface for structure visualization",
+      "stage": "old",
+      "swimlaneId": "webapp",
+      "reportedDate": "Sprint review December 1",
+      "completed": true
+    },
+    {
+      "id": "webapp-api",
+      "type": "milestone",
+      "title": "REST API v1 deployed",
+      "description": "Public API for programmatic access to predictions",
+      "stage": "recent",
+      "swimlaneId": "webapp",
+      "reportedDate": "Sprint review January 10",
+      "links": [
+        {
+          "id": "link-2",
+          "url": "https://api.example.com/docs",
+          "label": "API Documentation",
+          "type": "other"
+        }
+      ]
+    },
+    {
+      "id": "webapp-batch",
+      "type": "goal",
+      "title": "Batch processing UI",
+      "description": "Interface for submitting large-scale prediction jobs",
+      "stage": "short-term",
+      "swimlaneId": "webapp",
+      "dependsOn": ["webapp-api"]
+    },
+    {
+      "id": "webapp-collaboration",
+      "type": "goal",
+      "title": "Collaboration features",
+      "description": "Team workspaces and shared annotations",
+      "stage": "long-term",
+      "swimlaneId": "webapp"
+    },
+    {
+      "id": "md-forcefield",
+      "type": "milestone",
+      "title": "Custom forcefield validated",
+      "description": "Novel forcefield parameters for membrane proteins",
+      "stage": "old",
+      "swimlaneId": "md-modeling",
+      "reportedDate": "Lab meeting September 5",
+      "completed": true
+    },
+    {
+      "id": "md-simulations",
+      "type": "milestone",
+      "title": "100ns simulations complete",
+      "description": "Benchmark simulations on target protein family",
+      "stage": "recent",
+      "swimlaneId": "md-modeling",
+      "reportedDate": "Lab meeting January 5",
+      "dependsOn": ["md-forcefield"]
+    },
+    {
+      "id": "md-blocker-convergence",
+      "type": "blocker",
+      "title": "Simulation convergence issues",
+      "description": "Some systems showing unexpected drift in RMSD",
+      "stage": "recent",
+      "swimlaneId": "md-modeling",
+      "blockerStatus": "open"
+    },
+    {
+      "id": "md-enhanced",
+      "type": "goal",
+      "title": "Enhanced sampling methods",
+      "description": "Implement metadynamics and replica exchange",
+      "stage": "short-term",
+      "swimlaneId": "md-modeling",
+      "dependsOn": ["md-simulations"]
+    },
+    {
+      "id": "md-integration",
+      "type": "goal",
+      "title": "ML-MD integration",
+      "description": "Use ML predictions to initialize MD simulations",
+      "stage": "long-term",
+      "swimlaneId": "md-modeling",
+      "dependsOn": ["ml-foundation", "md-enhanced"]
+    },
+    {
+      "id": "ops-ci-cd",
+      "type": "milestone",
+      "title": "CI/CD pipeline established",
+      "description": "Automated testing and deployment workflows",
+      "stage": "old",
+      "swimlaneId": "operations",
+      "completed": true
+    },
+    {
+      "id": "ops-monitoring",
+      "type": "milestone",
+      "title": "Monitoring dashboard live",
+      "description": "Grafana dashboards for cluster and service health",
+      "stage": "recent",
+      "swimlaneId": "operations",
+      "reportedDate": "Ops review January 3"
+    },
+    {
+      "id": "ops-cost",
+      "type": "goal",
+      "title": "Cost optimization review",
+      "description": "Analyze and reduce cloud spending",
+      "stage": "short-term",
+      "swimlaneId": "operations",
+      "checkIns": [
+        {
+          "id": "ci-3",
+          "label": "Finance review February 20",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "mdx2-pipeline",
+      "type": "milestone",
+      "title": "Processing pipeline v1",
+      "description": "Automated data extraction and normalization",
+      "stage": "old",
+      "swimlaneId": "mdx2",
+      "completed": true
+    },
+    {
+      "id": "mdx2-quality",
+      "type": "milestone",
+      "title": "Quality control module",
+      "description": "Automated QC checks with reporting",
+      "stage": "recent",
+      "swimlaneId": "mdx2",
+      "reportedDate": "Data team sync January 9",
+      "enables": ["ml-blocker-data"]
+    },
+    {
+      "id": "mdx2-scale",
+      "type": "goal",
+      "title": "Scale to 10TB/day",
+      "description": "Handle increased data throughput",
+      "stage": "short-term",
+      "swimlaneId": "mdx2",
+      "dependsOn": ["compute-scaling"]
+    },
+    {
+      "id": "data-acq-partners",
+      "type": "milestone",
+      "title": "Partner agreements signed",
+      "description": "Data sharing agreements with 3 institutions",
+      "stage": "old",
+      "swimlaneId": "data-acquisition",
+      "completed": true
+    },
+    {
+      "id": "data-acq-ingestion",
+      "type": "milestone",
+      "title": "First external dataset ingested",
+      "description": "Successfully imported partner data into pipeline",
+      "stage": "recent",
+      "swimlaneId": "data-acquisition",
+      "reportedDate": "Data governance meeting January 6"
+    },
+    {
+      "id": "data-acq-expansion",
+      "type": "goal",
+      "title": "Expand to 10 partners",
+      "description": "Scale data acquisition program",
+      "stage": "long-term",
+      "swimlaneId": "data-acquisition"
+    },
+    {
+      "id": "encoding-schema",
+      "type": "milestone",
+      "title": "Encoding schema finalized",
+      "description": "Standard representation for molecular structures",
+      "stage": "old",
+      "swimlaneId": "encoding",
+      "completed": true
+    },
+    {
+      "id": "encoding-tokenizer",
+      "type": "milestone",
+      "title": "Tokenizer released",
+      "description": "Open-source tokenization library",
+      "stage": "recent",
+      "swimlaneId": "encoding",
+      "reportedDate": "Team meeting January 7",
+      "links": [
+        {
+          "id": "link-3",
+          "url": "https://github.com/example/tokenizer",
+          "label": "GitHub Repo",
+          "type": "github"
+        }
+      ]
+    },
+    {
+      "id": "encoding-optimization",
+      "type": "goal",
+      "title": "Encoding optimization",
+      "description": "Reduce token count by 30% while preserving information",
+      "stage": "short-term",
+      "swimlaneId": "encoding",
+      "dependsOn": ["encoding-tokenizer"]
+    },
+    {
+      "id": "encoding-multimodal",
+      "type": "goal",
+      "title": "Multimodal encoding",
+      "description": "Unified encoding for structure + sequence + dynamics",
+      "stage": "long-term",
+      "swimlaneId": "encoding",
+      "dependsOn": ["md-integration", "encoding-optimization"]
+    }
+  ]
+}
