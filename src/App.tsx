@@ -45,15 +45,19 @@ function App() {
       }, 100);
     }
 
-    // Load data from localStorage (Zustand persist) or fetch from JSON
+    // Load data from JSON file
     const loadRoadmapData = async () => {
-      // If we already have data in the store (from localStorage), use it
-      if (data) {
+      // Check if we're in readonly mode
+      const isReadonly = params.get('view') === 'readonly';
+
+      // In readonly mode, always fetch fresh data from JSON
+      // In edit mode, use localStorage cache if available
+      if (!isReadonly && data) {
         setIsLoading(false);
         return;
       }
 
-      // Otherwise, try to load from the JSON file
+      // Fetch from the JSON file
       try {
         const response = await fetch('./data/roadmap.json');
         if (!response.ok) {
