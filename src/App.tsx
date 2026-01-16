@@ -8,7 +8,6 @@ import './index.css';
 
 function App() {
   const {
-    data,
     loadData,
     setEditMode,
     setFocusedSwimlane,
@@ -47,17 +46,8 @@ function App() {
 
     // Load data from JSON file
     const loadRoadmapData = async () => {
-      // Check if we're in readonly mode
-      const isReadonly = params.get('view') === 'readonly';
-
-      // In readonly mode, always fetch fresh data from JSON
-      // In edit mode, use localStorage cache if available
-      if (!isReadonly && data) {
-        setIsLoading(false);
-        return;
-      }
-
-      // Fetch from the JSON file
+      // Always fetch fresh data from JSON file
+      // This ensures viewers always see the latest published roadmap
       try {
         const response = await fetch('./data/roadmap.json');
         if (!response.ok) {
